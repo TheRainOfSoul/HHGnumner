@@ -1,11 +1,12 @@
 # Netlify configuration for production deployment
 [build]
-  command = "npm ci && npm run build"
+  command = "npm install && npm run build"
   publish = "dist"
 
 # Environment variables processing
 [build.environment]
   NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 # Redirect all routes to index.html for SPA routing
 [[redirects]]
