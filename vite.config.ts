@@ -18,6 +18,18 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      // Настройки для GitHub Pages
+      base: process.env.NODE_ENV === 'production' ? '/' : '/',
+      build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
+        // Генерировать SPA fallback для клиентской маршрутизации
+        rollupOptions: {
+          output: {
+            manualChunks: undefined,
+          }
+        }
       }
     };
 });
