@@ -19,12 +19,12 @@ export default defineConfig(({ mode }) => {
           '@': path.resolve(__dirname, '.'),
         }
       },
-      // Настройки для GitHub Pages
-      base: process.env.NODE_ENV === 'production' ? '/' : '/',
+      // Правильный base path для GitHub Pages (название репозитория)
+      base: process.env.NODE_ENV === 'production' ? '/HHGnumner/' : '/',
       build: {
         outDir: 'dist',
         assetsDir: 'assets',
-        // Генерировать SPA fallback для клиентской маршрутизации
+        // Настройки для SPA
         rollupOptions: {
           output: {
             manualChunks: undefined,
