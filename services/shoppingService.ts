@@ -2,7 +2,8 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { ShoppingItem } from '../types';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// Support new key name with fallback to the old one
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Отсутствуют переменные окружения Supabase');
