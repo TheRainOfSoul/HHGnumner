@@ -19,8 +19,8 @@ export default defineConfig(({ mode }) => {
           '@': path.resolve(__dirname, '.'),
         }
       },
-      // Правильный base path для GitHub Pages (название репозитория)
-      base: process.env.NODE_ENV === 'production' ? '/HHGnumner/' : '/',
+      // Base path: '/' for Netlify/Cloudflare, '/HHGnumner/' for GitHub Pages
+      base: '/',
       build: {
         outDir: 'dist',
         assetsDir: 'assets',
