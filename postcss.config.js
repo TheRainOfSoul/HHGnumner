@@ -1,7 +1,6 @@
-// Tailwind CSS v4 uses a different approach - no PostCSS config needed
-// CSS processing is handled by Vite and Tailwind's new engine
+import tailwindcss from '@tailwindcss/postcss'
+import autoprefixer from 'autoprefixer'
+
 export default {
-  plugins: {
-    autoprefixer: {},
-  },
+  plugins: [tailwindcss, autoprefixer],
 }

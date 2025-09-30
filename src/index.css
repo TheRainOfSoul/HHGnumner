@@ -1,8 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/preflight" layer(base);
+@import "tailwindcss/utilities" layer(utilities);
+
+@theme {
+  --color-brand-dark: #1A1A1A;
+  --color-brand-dark-2: #2C2C2C;
+  --color-brand-red: #E53E3E;
+  --color-brand-light: #F7FAFC;
+  --color-brand-gray: #A0AEC0;
+  
+  --font-sans: Inter, sans-serif;
+}
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   overscroll-behavior-y: contain;
 }
